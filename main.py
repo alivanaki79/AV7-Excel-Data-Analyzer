@@ -5,7 +5,7 @@ import plotly.express as px
 st.set_page_config(page_title="ابزار تحلیل فایل اکسل", layout="centered")
 
 # انتخاب زبان
-lang = st.sidebar.selectbox("Language / زبان", ["فارسی", "English"])
+lang = st.sidebar.selectbox("Language / زبان", ["English", "فارسی"])
 
 # متون دو زبانه
 texts = {
