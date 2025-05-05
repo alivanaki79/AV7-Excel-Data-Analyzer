@@ -10,8 +10,8 @@ lang = st.sidebar.selectbox("Language / زبان", ["فارسی", "English"])
 # متون دو زبانه
 texts = {
     "فارسی": {
-        "title": "📊 ابزار تحلیل داده‌ها (فارسی + انگلیسی)",
-        "upload": "فایل اکسل یا CSV خود را آپلود کنید:",
+        "title": "📊 ابزار تحلیل داده‌ها (فارسی + English)",
+        "upload": "فایل اکسل یا سی‌اِس‌وی خود را آپلود کنید:",
         "select_file": "انتخاب فایل",
         "success": "✅ فایل با موفقیت بارگذاری شد!",
         "preview": "پیش‌نمایش داده‌ها:",
@@ -88,10 +88,10 @@ if uploaded_file:
         # بخش فیلتر
         st.subheader(T["filters"])
         filtered_df = df.copy()
-        cols_to_filter = st.multiselect("ستون‌هایی برای فیلتر", df.columns)
+        cols_to_filter = st.multiselect("(Column) ستون‌هایی برای فیلتر", df.columns)
         for col in cols_to_filter:
             unique_vals = df[col].dropna().unique().tolist()
-            selected_vals = st.multiselect(f"مقدار مورد نظر برای ستون {col}", unique_vals)
+            selected_vals = st.multiselect(f" (Desired value for the column) مقدار مورد نظر برای ستون {col}", unique_vals)
             if selected_vals:
                 filtered_df = filtered_df[filtered_df[col].isin(selected_vals)]
 
